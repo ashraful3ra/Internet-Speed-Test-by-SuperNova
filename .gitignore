@@ -34,7 +34,7 @@ build/
 tmp/
 temp/
 
-# Optional lock files (আপনি চাইলে রাখতে পারেন)
+# Optional lock files
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
