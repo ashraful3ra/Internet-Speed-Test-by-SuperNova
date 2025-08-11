@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+:root{
+  --fg:#111; --muted:#6b7280; --soft:#f7f7f8; --accent:#111; --border:#e9eaee;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  -webkit-text-size-adjust:100%;
+  font-family: Inter, 'Hind Siliguri', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:var(--fg); background:#fff; display:flex; flex-direction:column;
+}
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; background:#fff; border-bottom:1px solid var(--border);
+}
+.logo{display:flex; gap:10px; align-items:center; font-weight:800; font-size:22px;}
+.logo svg{width:26px; height:26px}
+.shell{display:flex; flex-direction:column; align-items:center; text-align:center; padding:20px 14px}
+.subtitle{margin:10px 0 6px; font-size:clamp(16px, 2.5vw, 22px)}
+.speed-wrap{display:flex; align-items:baseline; gap:10px; margin:6px 0 10px}
+.speed{font-size:clamp(64px, 22vw, 160px); line-height:1; font-weight:800; letter-spacing:-2px; min-width:0}
+.unit{font-size:clamp(22px, 6vw, 48px); font-weight:700}
+.btn.cta{
+  margin-top:8px;
+  padding:14px 22px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:#111; color:#fff; font-weight:700; cursor:pointer;
+  min-width: 180px;
+}
+.btn.cta:disabled{opacity:.6; cursor:not-allowed}
+.metrics{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin-top:14px; width:100%; max-width:780px; padding:0 4px}
+.metric{background:var(--soft); padding:14px 16px; border-radius:14px}
+.metric .label{font-size:14px; color:var(--muted)}
+.metric .value{font-size:clamp(20px, 5vw, 32px); font-weight:800}
+.metric .value .small{font-size:12px; margin-left:4px; color:var(--muted); font-weight:600}
+.metric .muted{font-size:12px; color:var(--muted)}
+.panel{margin-top:16px; width:min(780px, 96vw); background:#fff; border:1px solid var(--border); border-radius:12px; padding:10px 12px}
+.settings{display:flex; gap:12px; row-gap:8px; flex-wrap:wrap; padding:8px 4px}
+.settings input{padding:8px 10px; border:1px solid var(--border); border-radius:10px; width:92px}
+.hint{margin:6px 2px; color:var(--muted); font-size:12px}
+.log{margin-top:12px; text-align:left; background:#fff; border:1px dashed var(--border); padding:10px; border-radius:10px; width:min(780px, 96vw); color:#374151; white-space:pre-wrap}
+.foot{margin-top:auto; padding:14px 16px; color:var(--muted); text-align:center; border-top:1px solid var(--border)}
+@media (max-width:520px){
+  .metrics{grid-template-columns:1fr;}
+}

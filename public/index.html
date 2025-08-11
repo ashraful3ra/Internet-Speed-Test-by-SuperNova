@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Internet Speed Test | SuperNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo" aria-label="Brand">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M50 10a40 40 0 0 1 0 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="50" cy="65" r="6" fill="currentColor"/>
+      </svg>
+      <span>SuperNova</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <p class="subtitle">Your Internet speed is</p>
+    <div class="speed-wrap">
+      <div id="speedNumber" class="speed">—</div>
+      <div class="unit">Mbps</div>
+    </div>
+
+    <button id="toggle" class="btn cta" aria-label="Start/Pause">Start Test</button>
+
+    <section class="metrics">
+      <div class="metric">
+        <div class="label">Latency</div>
+        <div class="value"><span id="latency">—</span><span class="small">ms</span></div>
+        <div class="muted">Unloaded</div>
+      </div>
+      <div class="metric">
+        <div class="label">Upload</div>
+        <div class="value"><span id="upload">—</span><span class="small">Mbps</span></div>
+        <div class="muted">Speed</div>
+      </div>
+    </section>
+
+    <details class="panel">
+      <summary>Settings</summary>
+      <div class="settings">
+        <label>Duration <input id="duration" type="number" min="5" max="30" value="10"> sec</label>
+        <label>Streams <input id="parallel" type="number" min="1" max="8" value="4"></label>
+        <label>Chunk size <input id="chunksize" type="number" min="5" max="200" value="20"> MB</label>
+        <label>Upload payload <input id="uploadmb" type="number" min="1" max="8" value="2"> MB</label>
+      </div>
+      <!-- <p class="hint">Note: For real internet speed, keep the server running on VPS/datacenter—not locally.</p> -->
+    </details>
+
+    <pre id="log" class="log" aria-live="polite"></pre>
+  </main>
+
+  <footer class="foot">Powered by <b>SuperNova</b> • <span id="serverInfo">local</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
